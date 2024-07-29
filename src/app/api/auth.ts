@@ -1,16 +1,10 @@
-import {
-  MutationFunction,
-  useMutation,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { post } from '@/app/helpers/api-helpers'
 import * as url from '@/app/helpers/url'
+import { IUser } from '../types/user'
 
-export interface AuthenticationPayload {
-  username: string
-  password: string
-}
+export interface AuthenticationPayload extends IUser {}
 
 //* SIGN IN
 export const signIn = (data: AuthenticationPayload) => {

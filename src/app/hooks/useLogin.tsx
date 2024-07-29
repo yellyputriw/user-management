@@ -1,3 +1,5 @@
+"use client"
+
 import {
   createContext,
   ReactNode,
@@ -40,7 +42,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const saveAuth = (response: any) => {
     setLoggedIn(true)
-    localStorage.clear()
     localStorage.setItem('loggedIn', JSON.stringify(response))
     setAuthToken(() => response.token)
   }
